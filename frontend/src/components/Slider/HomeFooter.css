@@ -1,0 +1,41 @@
+.login-footer-container{
+    font-size: 13px;
+    background-color: #172337;
+    color: #fff;
+    }
+    .login-footer-items{
+        padding-top: 40px;
+        border-bottom: 1px solid gray;
+    }
+    .login-footer-child-items{
+        color: #fff;
+        font-weight: 400;
+    }
+    .login-footer-child-items p{
+        padding-top: 10px;
+    }
+    
+    .home-footer-mail-social{
+
+        padding-left: 18px;
+    }
+    
+    .login-footer-left-items{
+        padding-bottom: 50px;
+    }
+    
+    .home-footer-container-items-1{
+        display: grid;
+    }
+    .home-footer-container-items-2{
+    display: grid;
+
+    }
+    .home-footer-container-items-3{
+        display: grid;
+    }
+    .home-footer-container-items{
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+    }

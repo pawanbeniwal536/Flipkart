@@ -1,0 +1,112 @@
+.home-items-container-heading{
+
+   margin-right: 9px;
+   margin-left: 9px;
+   margin-top:10px;
+   margin-bottom: 20px;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-left: 30px;
+   padding-right:30px;
+   padding-top: 5px;
+   border-radius: 10px ;
+}
+
+ 
+ .home-container-items {
+   background-color: #fff;
+   border-radius: 8px;
+   overflow: hidden;
+   width: 150px;
+   transition: transform 0.3s;
+ }
+ 
+ .home-container-items:hover {
+   transform: translateY(-5px);
+ }
+ 
+ .home-items-img img {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+ }
+ 
+ .home-items-sort-title {
+   font-size: 16px;
+   font-weight: bold;
+   color: #333;
+   padding-top: 7px;
+   text-align: center;
+ }
+ 
+ .home-items-discount-price {
+   padding: 10px;
+   text-align: center;
+ }
+ 
+ .home-items-discount {
+   font-size: 14px;
+   color: #ff5722;
+   font-weight: bold;
+   /* margin-bottom: 5px; */
+ }
+ 
+ .home-items-price {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+ }
+ 
+ .home-items-price p {
+   margin: 0;
+ }
+ 
+ .home-items-price p:first-child {
+   text-decoration: line-through;
+   color: #757575;
+ }
+ 
+ .home-items-price p:last-child {
+   color: #388e3c;
+   font-weight: bold;
+ }
+ 
+
+ .login-below-items {
+  display: flex;
+  justify-content: space-evenly; /* Ensure items are evenly spaced */
+  padding: 20px 0; /* Adjust padding as needed */
+}
+
+.login-below-items > div {
+  display: flex;
+  align-items: center;
+}
+
+.login-below-items img {
+  max-width: 100%; /* Ensure images don't exceed their container */
+}
+
+.login-below-items p {
+  margin: 0; /* Remove default margins */
+  color: #fff; /* Adjust text color */
+}
+
+@media (max-width: 768px) {
+  .login-below-items {
+      flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  }
+
+  .login-below-items > div {
+      flex-basis: 50%; /* Two items per row on smaller screens */
+      margin-bottom: 10px; /* Adjust spacing between items */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-below-items > div {
+      flex-basis: 100%; /* Full width for each item on extra small screens */
+  }
+}

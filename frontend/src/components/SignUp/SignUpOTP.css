@@ -1,0 +1,17 @@
+.signup-number-change{
+    border-bottom:1px solid rgb(37 99 235);
+}
+.right-side-content{
+    width:30rem;
+}
+.signup-otp-field{
+    font-size: 14px;
+}
+.signup-submit-otp{
+    border-bottom: 1px solid black;
+}
+
+.signup-submit-otp input{
+    outline: none;
+    width: full;
+}

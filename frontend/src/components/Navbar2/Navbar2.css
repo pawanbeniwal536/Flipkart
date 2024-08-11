@@ -1,0 +1,84 @@
+.nav2-child-container {
+    background-color: #2874f0;
+}
+
+.nav2-input {
+    width: 30rem;
+}
+
+.nav2-input input {
+    height: 35px
+}
+
+.fliplogo-down-content {
+    font-size: 10px;
+    font-family: Roboto, Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+.flip-nav2-img img {
+    width: 9px
+}
+.login-user{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.seller-class{
+    font-size: 15px;
+}
+.arrow-for-more{
+    height: 10px;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 12px solid white;
+    top:-11px;
+}
+.nav2-login-hover{
+background-color:white;
+height:190px;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+display: none;
+}
+
+
+.class-for-more{
+    cursor: pointer;
+    height: 50px;
+}
+.class-for-more:hover .nav2-login-hover{
+    display: block;
+}
+.nav2-arrow-up{
+height: 10px;
+display: none;
+}
+
+.class-for-more:hover .nav2-arrow-up{
+    display:block;
+}
+.class-for-more:hover .nav2-arrow-down{
+    display: none;
+} 
+.nav2-arrow-same-cls{
+    height: 10px;
+}
+
+.triangle-hover .nav2-login-hover{
+    display: block;
+}
+.nav2-login-hover:hover .nav2-login-hover{
+    display:block;
+} 
+
+.nav2-logo-input{
+    margin-right: 20px;
+}
+.become-a-seller-cls{
+    white-space: nowrap;
+}

@@ -1,0 +1,96 @@
+.signup-container{
+    display: flex;
+    width:50rem;
+    height:500px ;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.left-side{
+    width:calc(50rem - 30rem);
+    background-color: #2874f0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+.signup-name-heading{
+    font-size: 30px;
+    padding-left:34px;
+    padding-top:25px;
+    font-weight: 600;
+}
+.signup-description{
+    color: white;
+    padding-top: 15px;
+    padding-left: 35px;
+    width: 17rem;
+}
+.signup-input input{
+   width: 100%;
+   border-bottom:1px solid #2874f0;
+   outline: none;
+   padding-bottom:6px;
+}
+.right-side-content{
+    padding-left:40px;
+    padding-right: 40px;
+}
+.signup-input-desc{
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.signup-terms-text{
+    color: #2874f0;
+}
+.policy-terms-text{
+    color:#2874f0;
+}
+.span-signup-cls{
+    color: #6B7280
+}
+.signup-page-otp{
+    color:#fff;
+    background-color: #fb641b;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    border: none;
+}
+
+.signup-bc-image{
+    margin-top:170px;
+  display: flex;
+justify-content: center
+}
+
+.signup-bottom{
+    color: #2874f0;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.email-signup{
+    padding-top:30px;
+}
+.default-input{
+    display: none;
+}
+
+.clicked-input{
+    color: #6B7280
+}
+.exist-user-cls{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
+}
+.signup-datepicker{
+    border: 1px solid #2874f0;
+    margin-left: 10px;
+    border-radius:  5px ;
+    z-index: -1;
+}
+.signup-username input{
+    border-bottom: 1px solid #2874f0;
+    width: 100%;
+}

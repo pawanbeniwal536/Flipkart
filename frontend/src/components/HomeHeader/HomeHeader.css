@@ -1,0 +1,36 @@
+.container-home-header {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #fff;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f5f5f5;
+ 
+  }
+
+  .nav-item {
+    flex: none;
+    width: 8rem; /* Fixed width */
+    text-align: center;
+  }
+  
+  .container-home-header p {
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .container-home-header::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .container-home-header::-webkit-scrollbar-track {
+    background: #f5f5f5;
+  }
+  
+  .container-home-header::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+    border: 3px solid #f5f5f5;
+  }
+  

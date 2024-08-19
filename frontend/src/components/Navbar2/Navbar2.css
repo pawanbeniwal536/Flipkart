@@ -2,8 +2,13 @@
     background-color: #2874f0;
 }
 
+.nav2-super-container{
+    position: sticky;
+    top: 0;
+}
+
 .nav2-input {
-    width: 30rem;
+    width: 30vw;
 }
 
 .nav2-input input {
@@ -16,7 +21,6 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-
 }
 
 .flip-nav2-img img {
@@ -81,4 +85,38 @@ display: none;
 }
 .become-a-seller-cls{
     white-space: nowrap;
+}
+
+
+@media (max-width: 1080px) {
+    .become-a-seller-cls, .class-for-more {
+        display: none !important;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav2-header-class{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav2-logo-input{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 9px;
+    }
+    .nav2-right-flex{
+        width: 100%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+
+    }
+    .nav2-child-container{
+        padding-bottom: 40px;
+    }
+    .nav2-input{
+        width: 50vw;
+    }
 }

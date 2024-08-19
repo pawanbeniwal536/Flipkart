@@ -6,7 +6,7 @@ import './Navbar2.css';
 
 const user = localStorage.getItem('Profile');
 
-const Navbar = () => {
+const Navbar2 = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -18,11 +18,11 @@ const Navbar = () => {
             <div className="nav2-child-container shadow-md">
                 <div className="nav2-header-class flex items-center justify-between h-14 px-4">
                     <div className="nav2-logo-input flex items-center space-x-4">
-                        <Link to='/' className="logo-images flex flex-col hover:cursor-pointer">
+                        <Link to='/' className="nav2-logo-images flex flex-col hover:cursor-pointer">
                             <div className="flipname-image">
-                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="flipkart-image" className='h-4 ml-28' />
+                                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="flipkart-image" className='h-4 ml-9' />
                             </div>
-                            <div className="fliplogo-down-content ml-28 flex">
+                            <div className="fliplogo-down-content ml-9 flex">
                                 <div className="explore-text text-slate-100">Explore</div>
                                 <div className="plus-text text-amber-200 pl-1">Plus</div>
                                 <div className="flip-nav2-img"><img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/plus_aef861.png" alt="" /></div>
@@ -41,7 +41,7 @@ const Navbar = () => {
                     <div className="nav2-right-flex text-sm flex items-center space-x-12 mr-4 md:mr-28">
                         <div className="login-user bg-white w-28 h-7 flex items-center justify-center hover:cursor-pointer">
                             {user ? (
-                                <Link to='/account/user-profile' className="text-gray-700 text-blue-600 font-medium">Account</Link>
+                                <Link to='' className="text-gray-700 text-blue-600 font-medium">Account</Link>
                             ) : (
                                 <Link to='/account/login' className="text-gray-700 text-blue-600 font-medium">Login</Link>
                             )}
@@ -97,4 +97,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navbar2

@@ -85,7 +85,7 @@ justify-content: center
     
 }
 .signup-datepicker{
-    border: 1px solid #2874f0;
+    border-bottom: 1px solid #2874f0;
     margin-left: 10px;
     border-radius:  5px ;
     z-index: -1;
@@ -93,4 +93,16 @@ justify-content: center
 .signup-username input{
     border-bottom: 1px solid #2874f0;
     width: 100%;
+} 
+
+@media (max-width:800px) {
+    .left-side{
+        display: none;
+    }
+    .right-side{
+        width: 100%;
+    }
+    .right-side-content{
+        width: 100%  !important
+    }
 }

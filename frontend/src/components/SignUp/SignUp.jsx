@@ -20,7 +20,7 @@ const SignUp = () => {
 
   const eighteenYearsAgo = new Date();
   eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18);
-  const minDate = new Date('1960-01-01');
+  const minDate = new Date('1990-01-01');
 
 
   const dispatch = useDispatch();
@@ -90,7 +90,7 @@ const SignUp = () => {
             <div className="right-side flex justify-between flex-col ">
               <div className="right-side-content mt-16">
                 <div className="signup-username flex">
-                  <p>Username:</p>
+                  <p>Name:</p>
                   <input type="text" placeholder='Enter Username' className='ml-2' onChange={(e)=>setUsername(e.target.value)} />
                 </div>
                 <div className="signup-user-dob mt-3">

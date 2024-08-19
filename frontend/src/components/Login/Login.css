@@ -83,3 +83,47 @@ justify-content: center
 .clicked-input{
     color: #6B7280
 }
+
+.mob-child-input{
+    border: 1px solid #6B7280;
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.mob-child-input input {
+    padding-left: 8px; /* Apply padding to the input field */
+    outline: none;
+    width: 100%;
+}
+
+
+.mob-child-tit p{
+    font-size: 12px;
+    color: gray;
+}
+
+.mobile-child-c{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.submit-btn{
+    /* margin-top: 50px; */
+    margin: auto;
+    background-color: #2874f0;
+    width: 80%;
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+    border-radius: 20px ;
+    padding: 5px 0px;
+}
+
+.mob-child-sign{
+    color:#2874f0;
+    cursor: pointer;
+    margin-top: 60px;
+    text-align: center;
+}

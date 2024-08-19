@@ -10,6 +10,7 @@ const Login = ({onEmailChange}) => {
   const [placeholder, setPlaceholder] = useState('Enter Email Address');
   const [email, setEmail] = useState( '');
   const [otpRequested, setOtpRequested] = useState(false); 
+  const [screenWidth ,setScreenWidth ] = useState(false);
   const navigate = useNavigate();
 
   const user = localStorage.getItem('Profile')
@@ -60,7 +61,23 @@ const Login = ({onEmailChange}) => {
     }
   }, [data, otpRequested, navigate]);
 
+  useEffect(()=>{
 
+    const handleResize = () => {
+      if (window.innerWidth>800) {
+        setScreenWidth(false)
+      }
+      else{
+        setScreenWidth(true)
+      }
+    }
+
+    window.addEventListener('resize',handleResize);
+
+    handleResize()
+   
+    window.removeEventListener('resize',handleResize)
+  },[])
 
   return (
     <>
@@ -71,7 +88,30 @@ const Login = ({onEmailChange}) => {
           </div>
         </div>
       ) : (
-        <div className="login-big-container flex justify-center">
+        screenWidth?(<>
+        <div className="mob-login-cls-container flex-col ">
+          <div className="mob-child-tit">
+            <h3>Log in for the best experience</h3>
+            <p className='pt-2'>Enter your Email id to continue</p>
+          </div>
+          <div className="mob-child-input"> 
+            <input type="text" placeholder='Enter your Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+          </div>
+          <div className="mobile-child-c">
+                    By continuing, you agree to Flipkart's
+                    <p className="pl-1 pr-1 login-terms-text"> Terms of Use </p>
+                    and
+                    <p className="pl-1 policy-terms-text"> Privacy Policy. </p>
+          </div>
+          <div className="mob-child-sign">
+            <Link to='/account/signup'>New to Flipkart? Create an account </Link>
+          </div>
+        </div>
+        <div className="submit-btn ">
+          <button  onClick={handleRequestOTP}> Send OTP </button>
+        </div>
+        </>):
+        <div className={`login-big-container flex justify-center`}>
           <div className="login-container">
             <div className="left-side">
               <div className="login-name-heading text-white">
@@ -125,7 +165,8 @@ const Login = ({onEmailChange}) => {
             </div>
           </div>
         </div>
-      )}
+      )
+      }
     </>
   );
 };

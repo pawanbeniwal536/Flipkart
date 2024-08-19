@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBirthdayCake } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
-import LoginFooter from '../LoginFooter/LoginFooter';
+import HomeFooter from '../Slider/HomeFooter'
 import Navbar2 from '../Navbar2/Navbar2'
 import './UserProfile.css';
 import { useNavigate } from 'react-router-dom';
@@ -112,7 +112,7 @@ const handleHome = () => {
         </section>
       </main>
     </div>
-    <LoginFooter/>
+    <HomeFooter/>
     </div>
   ):
   (

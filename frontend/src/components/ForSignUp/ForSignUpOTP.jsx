@@ -6,6 +6,7 @@ import SignUpOTP from '../SignUp/SignUpOTP'
 const ForSignUpOTP = () => {
   const [screenWidth ,setScreenWidth]  = useState(false);
 
+  
   useEffect(()=>{
 
     const handleResize = () => {

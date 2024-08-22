@@ -16,6 +16,10 @@
     height: 500px;
 }
 
+.home-items-slider-container{
+    cursor: pointer;
+}
+
 
 @media(max-width:800px){
     .slider-side-img-container{

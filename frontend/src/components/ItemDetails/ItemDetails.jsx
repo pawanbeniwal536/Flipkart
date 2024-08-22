@@ -54,7 +54,6 @@ const ItemDetails = () => {
     if (items?.data?.data) {
       const arr = items.data.data;
       const filterItem = arr.find((val) => val.id === id);
-      console.log('the value of the filtereitem is the ',filterItem)
       setItem(filterItem);
     }
 

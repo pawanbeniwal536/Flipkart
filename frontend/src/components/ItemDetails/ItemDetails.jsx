@@ -5,6 +5,7 @@ import ItemHeader from '../ItemHeader/ItemHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
+import HomeFooter from '../Slider/HomeFooter'
 import './ItemDetails.css';
 
 
@@ -17,6 +18,7 @@ const ItemDetails = () => {
   const [enteredPincode, setEnteredPincode] = useState(''); // State to manage the entered pincode
   const [deliveryDate, setDeliveryDate] = useState(''); // State to store the calculated delivery date
   const [timeLeft, setTimeLeft] = useState(20 * 60);
+  const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,6 +50,20 @@ const ItemDetails = () => {
     // Cleanup the timer interval on component unmount
     return () => clearInterval(timer);
   }, []);
+
+  // check item is already added in cart or not
+  useEffect(() => {
+    const localData = JSON.parse(localStorage.getItem('Cart'));
+    if (localData) {
+      const filteredData = localData.find((item) => item === id)
+      if (filteredData) {
+        setIsInCart(true)
+      }
+      else {
+        setIsInCart(false)
+      }
+    }
+  }, [id, items])
 
 
   useEffect(() => {
@@ -104,6 +120,23 @@ const ItemDetails = () => {
       .padStart(2, '0')}`;
   };
 
+
+
+  const handleCart = () => {
+    // Retrieve the existing cart from localStorage, or start with an empty array if it doesn't exist
+    let cart = JSON.parse(localStorage.getItem('Cart')) || [];
+
+    // Check if the item is already in the cart
+    if (!cart.includes(id)) {
+      // If the item is not in the cart, add it
+      cart.push(id);
+
+      // Save the updated cart back to localStorage
+      localStorage.setItem('Cart', JSON.stringify(cart));
+    }
+  };
+
+
   return (
     <>
       <Navbar2 />
@@ -114,7 +147,7 @@ const ItemDetails = () => {
             <img src={item.detailUrl} alt={item.title.shortTitle} />
           </div>
           <div className="item-actions">
-            <button className="add-to-cart-btn">Add to cart</button>
+            <button className="add-to-cart-btn" onClick={handleCart}>{isInCart?'Go to Cart':'Add to Cart'}</button>
             <button className="buy-now-btn">Buy Now</button>
           </div>
         </div>
@@ -209,6 +242,7 @@ const ItemDetails = () => {
           </div>
         </div>
       </div>
+      <HomeFooter />
     </>
   );
 };

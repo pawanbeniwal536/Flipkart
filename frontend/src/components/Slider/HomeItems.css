@@ -110,3 +110,14 @@
       flex-basis: 100%; /* Full width for each item on extra small screens */
   }
 }
+
+@media (max-width:460px){
+ .home-items-container-heading{
+  width: 90vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+ .home-items-sort-title{
+  font-size: 30px;
+  font-weight: 800;
+ }
+}

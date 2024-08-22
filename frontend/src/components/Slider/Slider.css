@@ -25,3 +25,11 @@
         display: block;
     }
 }
+
+@media (max-width:460px){
+    .home-items-slider-container{
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+   }

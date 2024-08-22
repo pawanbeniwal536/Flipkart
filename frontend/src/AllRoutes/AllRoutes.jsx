@@ -6,8 +6,12 @@ import ForSignUp from '../components/ForSignUp/ForSignUp.jsx';
 import LoginOTP from '../components/ForLoginPage/ForLoginOtp.jsx'
 import ForSignUpOTP from '../components/ForSignUp/ForSignUpOTP.jsx';
 import UserProfile from '../components/UserProfile/UserProfile.jsx';
+import ItemDetails from '../components/ItemDetails/ItemDetails.jsx';
+import { useSelector } from 'react-redux';
+
 const AllRoutes = () => {
-    const [ email , setEmail ] = useState('Enter your Email')
+    const [ email , setEmail ] = useState('Enter your Email')     
+
     const mailChange=(newEmail)=>{
      setEmail(newEmail)
     }
@@ -22,6 +26,7 @@ const AllRoutes = () => {
               <Route path = '/account/login/otp' element={<LoginOTP email={email}/>}/>
               <Route path = '/account/signup/otp' element= {<ForSignUpOTP/>}/>
             <Route path = '/account/:id/user-profile' element = {<UserProfile/>} />
+            <Route path="/item/:id" element={<ItemDetails />} /> 
             </Routes>
         </>
     )

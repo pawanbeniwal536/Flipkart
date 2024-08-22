@@ -20,7 +20,7 @@ const SignUp = () => {
 
   const eighteenYearsAgo = new Date();
   eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18);
-  const minDate = new Date('1990-01-01');
+  const minDate = new Date('1960-01-01');
 
 
   const dispatch = useDispatch();

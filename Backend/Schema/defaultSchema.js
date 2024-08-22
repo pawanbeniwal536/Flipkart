@@ -13,6 +13,7 @@ const defaultSchema = new Schema({
     title: Object,
     price: Object,
     quantity: Number,
+    rating:Number,
     description: String,
     discount: String,
     tagline: String

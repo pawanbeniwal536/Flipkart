@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faMagnifyingGlass, faChevronDown, faCartShopping, faBell, faHeadset, faRectangleAd, faDownload, faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -8,10 +8,20 @@ const user = localStorage.getItem('Profile');
 
 const Navbar2 = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [cartQuantity, setCartQuantity] = useState(0);
+    const user = JSON.parse(localStorage.getItem('Profile'));
+    const id = user?._id;
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    useEffect(() => {
+        // Fetch cart quantity from localStorage
+        const cart = JSON.parse(localStorage.getItem('Cart')) || [];
+        const totalQuantity = cart.length;
+        setCartQuantity(totalQuantity);
+    }, []);
 
     return (
         <div className="nav2-super-container">
@@ -41,7 +51,7 @@ const Navbar2 = () => {
                     <div className="nav2-right-flex text-sm flex items-center space-x-12 mr-4 md:mr-28">
                         <div className="login-user bg-white w-28 h-7 flex items-center justify-center hover:cursor-pointer">
                             {user ? (
-                                <Link to='' className="text-gray-700 text-blue-600 font-medium">Account</Link>
+                                <Link to={`/account/${id}/user-profile`} className="text-gray-700 text-blue-600 font-medium">Account</Link>
                             ) : (
                                 <Link to='/account/login' className="text-gray-700 text-blue-600 font-medium">Login</Link>
                             )}
@@ -87,8 +97,11 @@ const Navbar2 = () => {
                         </div>
 
                         <div className="nav2-cart-img flex items-center space-x-2 hover:cursor-pointer">
+                            <span className="position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger mb-1 ml-2 font-extrabold">
+                                {cartQuantity > 0 ? cartQuantity : '0'}
+                            </span>
                             <FontAwesomeIcon className="text-white" icon={faCartShopping} />
-                            <p className="text-gray-700 text-white font-semibold">Cart</p>
+                            <Link to='/cart-items'className="text-gray-700 text-white font-semibold">Cart</Link>
                         </div>
                     </div>
                 </div>

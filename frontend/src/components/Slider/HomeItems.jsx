@@ -6,7 +6,6 @@ const HomeItems = ({id, url, shortTitle, price }) => {
   
   const navigate = useNavigate();
   const handleClick = (e) => {
-    console.log('now clicked it',id)
     navigate(`/item/${id}`);
   }
   return (

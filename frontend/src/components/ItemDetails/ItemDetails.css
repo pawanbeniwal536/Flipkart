@@ -137,6 +137,11 @@
   .item-image , .item-image img {
     width: 100%;
   }
+  .rating-cls{
+    display: flex;
+    width: 45px;
+    justify-content: space-around;
+  }
   
 }
 

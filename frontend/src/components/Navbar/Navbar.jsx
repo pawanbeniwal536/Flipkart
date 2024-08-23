@@ -10,6 +10,7 @@ const Navbar = () => {
   const id = user?._id;
   const [filteredItems, setFilteredItems] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [cartQuantity, setCartQuantity] = useState(0); // State to manage cart quantity
 
   const items = useSelector((state) => state.products.data);
 
@@ -23,6 +24,13 @@ const Navbar = () => {
       setFilteredItems([]);
     }
   }, [searchQuery, items]);
+
+  useEffect(() => {
+    // Fetch cart quantity from localStorage
+    const cart = JSON.parse(localStorage.getItem('Cart')) || [];
+    const totalQuantity = cart.length;
+    setCartQuantity(totalQuantity);
+  }, []);
 
   return (
     <>
@@ -61,11 +69,16 @@ const Navbar = () => {
               </div>
 
               <div className="flex items-center space-x-2 cart-image-container">
+                <span className="position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger mb-1 ml-2 font-extrabold">
+                  {cartQuantity > 0 ? cartQuantity : '0'}
+                </span>
                 <img
                   src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
                   alt="cart-logo"
                 />
-                <Link to='#' className="text-gray-700 cart-cls">Cart</Link>
+                <Link to='/cart-items' className="text-gray-700 cart-cls">
+                  Cart
+                </Link>
               </div>
 
               <div className="flex items-center space-x-2 seller-cls-container">

@@ -7,7 +7,7 @@ import LoginOTP from '../components/ForLoginPage/ForLoginOtp.jsx'
 import ForSignUpOTP from '../components/ForSignUp/ForSignUpOTP.jsx';
 import UserProfile from '../components/UserProfile/UserProfile.jsx';
 import ItemDetails from '../components/ItemDetails/ItemDetails.jsx';
-import { useSelector } from 'react-redux';
+import Cart from '../components/Cart/Cart.jsx';
 
 const AllRoutes = () => {
     const [ email , setEmail ] = useState('Enter your Email')     
@@ -27,6 +27,7 @@ const AllRoutes = () => {
               <Route path = '/account/signup/otp' element= {<ForSignUpOTP/>}/>
             <Route path = '/account/:id/user-profile' element = {<UserProfile/>} />
             <Route path="/item/:id" element={<ItemDetails />} /> 
+            <Route path='/cart-items' element={<Cart/>}/>
             </Routes>
         </>
     )

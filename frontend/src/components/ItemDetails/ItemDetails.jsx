@@ -4,13 +4,17 @@ import Navbar2 from '../Navbar2/Navbar2';
 import ItemHeader from '../ItemHeader/ItemHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import HomeFooter from '../Slider/HomeFooter'
+import { useNavigate } from 'react-router-dom';
 import './ItemDetails.css';
+import getProducts from '../../action/getProducts';
 
 
 const ItemDetails = () => {
   const { id } = useParams(); // Get the item id from the URL
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
   const items = useSelector((state) => state.products.data);
   const [item, setItem] = useState(null); // State to store the filtered item
   const [screenWidth, setScreenWidth] = useState(false);
@@ -67,12 +71,12 @@ const ItemDetails = () => {
 
 
   useEffect(() => {
+    dispatch(getProducts());
     if (items?.data?.data) {
       const arr = items.data.data;
       const filterItem = arr.find((val) => val.id === id);
       setItem(filterItem);
     }
-
   }, [id, items]);
 
   if (!item) {
@@ -134,6 +138,7 @@ const ItemDetails = () => {
       // Save the updated cart back to localStorage
       localStorage.setItem('Cart', JSON.stringify(cart));
     }
+    navigate('/cart-items')
   };
 
 
@@ -147,7 +152,7 @@ const ItemDetails = () => {
             <img src={item.detailUrl} alt={item.title.shortTitle} />
           </div>
           <div className="item-actions">
-            <button className="add-to-cart-btn" onClick={handleCart}>{isInCart?'Go to Cart':'Add to Cart'}</button>
+            <button className="add-to-cart-btn" onClick={handleCart}>{isInCart?'Go to Cart':'Add to Cart' }</button>
             <button className="buy-now-btn">Buy Now</button>
           </div>
         </div>

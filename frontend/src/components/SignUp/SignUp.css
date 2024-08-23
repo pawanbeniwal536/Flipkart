@@ -95,6 +95,17 @@ justify-content: center
     width: 100%;
 } 
 
+.signup-user-dob{
+    display: flex;
+}
+.signup-user-dob input{
+    outline: none;
+    border-bottom: 1px solid #2874f0;
+    width: 100%;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
 
 @media (max-width:800px) {
     .left-side{

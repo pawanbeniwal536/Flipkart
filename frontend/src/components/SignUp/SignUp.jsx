@@ -4,30 +4,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signupOTP } from '../../action/auth';
 import './SignUp.css';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 const SignUp = () => {
   
   const [email, setEmail] = useState('');
   const [otpRequested, setOtpRequested] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [username , setUsername] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
+  const [username, setUsername] = useState('');
   const navigate = useNavigate();
    
-  const user = localStorage.getItem('Profile')
-
+  const user = localStorage.getItem('Profile');
 
   const eighteenYearsAgo = new Date();
   eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18);
   const minDate = new Date('1960-01-01');
 
-
   const dispatch = useDispatch();
 
   const data = useSelector(state => state.auth.data);
   const loading = useSelector(state => state.auth.loading);
-
 
   // Function to validate the email address
   const validateEmail = (email) => {
@@ -35,14 +30,32 @@ const SignUp = () => {
     return re.test(String(email).toLowerCase());
   };
 
+  // Function to validate date of birth
+  const validateDOB = (dob) => {
+    const dobRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+    if (!dobRegex.test(dob)) {
+      alert('Date of Birth should be in the format dd/MM/yyyy');
+      return false;
+    }
+    
+    const [day, month, year] = dob.split('/').map(Number);
+    const dobDate = new Date(year, month - 1, day);
+    const age = new Date().getFullYear() - dobDate.getFullYear();
+
+    if (dobDate > eighteenYearsAgo) {
+      alert('Enter correct day , month and year && above than eighteen years');
+      return false;
+    }
+
+    return true;
+  };
+
   // Function to handle OTP request
   const handleRequestOTP = () => {
-    if (validateEmail(email)) {
-      dispatch(signupOTP(email,username,selectedDate));
+    if (validateEmail(email) && validateDOB(selectedDate)) {
+      dispatch(signupOTP(email, username, selectedDate));
       setOtpRequested(true);
       setEmail(''); // Clear the email input immediately after dispatching the OTP request
-    } else {
-      alert('Please enter a valid email');
     }
   };
 
@@ -50,8 +63,8 @@ const SignUp = () => {
     if (otpRequested && data) {
       if (data.success) {
         if(user){
-          alert("You are already logged in")
-          navigate('/')
+          alert("You are already logged in");
+          navigate('/');
         }
         alert('Successfully sent OTP to your email');
         navigate('/account/signup/otp');
@@ -95,16 +108,12 @@ const SignUp = () => {
                 </div>
                 <div className="signup-user-dob mt-3">
                   <label htmlFor="dob">DOB:</label>
-                  <DatePicker
-                    selected={selectedDate}
-                    className='signup-datepicker'
-                    onChange={(date) => setSelectedDate(date)}
-                    dateFormat="dd/MM/yyyy"
-                    minDate={minDate}
-                    maxDate={eighteenYearsAgo}
-                    showYearDropdown
-                    scrollableYearDropdown
-                    placeholderText="Select a DOB"
+                  <input
+                    type="text"
+                    className='ml-2'
+                    placeholder="dd/MM/yyyy"
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
                   />
                 </div>
                 <div className="signup-input mt-3 flex ">

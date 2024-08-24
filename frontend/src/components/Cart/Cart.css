@@ -161,7 +161,7 @@
     font-weight: 700;
   }
 
-  .place-order-button-cls {
+  .place-order-button-cls{
     display: flex;
     justify-content: flex-end; /* Aligns the button to the right */
     align-items: center; /* Centers the button vertically */
@@ -172,7 +172,7 @@
     margin-bottom: 40px;
   }
   
-  .place-order-button-cls button {
+  .place-order-button-cls .place-order-button{
     background-color: #fb641b;
     color: white;
     padding: 14px 55px;

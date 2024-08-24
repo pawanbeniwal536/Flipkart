@@ -17,7 +17,7 @@ const Cart = () => {
     let items = useSelector((state) => state.products.data);
 
     useEffect(() => {
-        dispatch(getProducts())
+        // dispatch(getProducts())
         if (items) {
             const storedItems = items?.data?.data?.filter(item => products.includes(item.id));
             setItem(storedItems);
@@ -97,6 +97,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-
-// here is correct

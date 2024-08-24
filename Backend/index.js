@@ -3,6 +3,7 @@ const connection =require('./DbCon/DbCon')
 const defaultData = require('./defaultData/defaultData')
 const Signup = require('./Routes/Users')
 const Products = require('./Routes/Products')
+const Payment = require('./Routes/Payment')
 const cors = require('cors');
 
 const app = express()
@@ -10,11 +11,14 @@ app.use(cors())
 require('dotenv').config();
 
 connection()
+
 let PORT = process.env.PORT_NUMBER
+
 defaultData()
 app.use(express.json())
 app.use('/user',Signup)
 app.use('/get',Products)
+app.use('/payment',Payment)
 app.use('/',(req,res)=>{
     res.send("Helow world") 
 })

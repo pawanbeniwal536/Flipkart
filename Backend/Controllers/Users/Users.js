@@ -123,7 +123,7 @@ const signupOTPVerify = async (req, res) => {
   try {
     const { userOTP } = req.body
     if (sendOtpStatus) {
-      if (userOTP === globalotp) {
+      if ( userOTP === globalotp ) {
         try {
           const newUser = await Users.create({ Email: signupMail, username: username, dob: dateofbirth })
           sendOtpStatus = false;
@@ -134,7 +134,7 @@ const signupOTPVerify = async (req, res) => {
           const token = jwt.sign({ email: newUser.Email, id: newUser._id }, process.env.JWT_SECRET)
           return res.status(201).send({ success: true, message: "User successfully registered.", token: token });
         } catch (error) {
-
+          
           sendOtpStatus = false;
           signupMail = '';
           globalotp = '';
@@ -157,7 +157,6 @@ const loginOTPVerify = async (req, res) => {
 
   try {
     const { userOTP } = req.body;
-
     if (sendlogOTPStatus) {
       if (userOTP === loginGloOTP) {
         sendlogOTPStatus = false;

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import assuredFlip from '../../asset/cartItem.jpg';
+import { Link } from 'react-router-dom';
 
 const CartItems = ({ items, onQuantityChange }) => {
   const [cartItems, setCartItems] = useState(items);
+  const [amount,setAmount] = useState(0);
 
   useEffect(() => {
     setCartItems(items);
@@ -26,6 +28,14 @@ const CartItems = ({ items, onQuantityChange }) => {
     const updatedItems = cartItems.filter(item => item.id !== id);
     updateCartItems(updatedItems);
   };
+
+  const calculateTotalAmount = () => {
+    return cartItems.reduce((total, item) => total + item.price.cost, 0);
+  };
+
+  useEffect(()=>{
+  setAmount(calculateTotalAmount())
+  },[removeItem])
 
   return (
     <>
@@ -57,7 +67,7 @@ const CartItems = ({ items, onQuantityChange }) => {
           </div>
         ))}
         <div className="place-order-button-cls">
-          <button className='place-order-button'> PLACE ORDER </button>
+          <Link to={`/product/flipkart/user/account/make-payment/paypal/secure/payment/${amount}`} className='place-order-button'> PLACE ORDER </Link>
         </div>
       </div>
     </>
@@ -66,6 +76,3 @@ const CartItems = ({ items, onQuantityChange }) => {
 
 
 export default CartItems;
-
-
-// here is correct

@@ -17,10 +17,10 @@ const Home = () => {
 <HomeBanner/>
 <div className="slider-home-container">
 <Slider/>
-{/* <Slider2 title={"Best of Electronics"}/> */}
-{/* <Slider2 title={"Best Seller"}/>
+<Slider2 title={"Best of Electronics"}/>
+<Slider2 title={"Best Seller"}/>
 <Slider2 title={"Top Items"}/>
-<Slider2 title={"Explore New Styles"}/> */}
+<Slider2 title={"Explore New Styles"}/>
 </div>
 <div className="home-description-container">
 <HomeDescription/>

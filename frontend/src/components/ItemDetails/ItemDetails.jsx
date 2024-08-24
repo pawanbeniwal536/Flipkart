@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import HomeFooter from '../Slider/HomeFooter'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import './ItemDetails.css';
 import getProducts from '../../action/getProducts';
 
@@ -153,7 +153,7 @@ const ItemDetails = () => {
           </div>
           <div className="item-actions">
             <button className="add-to-cart-btn" onClick={handleCart}>{isInCart?'Go to Cart':'Add to Cart' }</button>
-            <button className="buy-now-btn">Buy Now</button>
+            <Link to={`/product/flipkart/user/account/make-payment/paypal/secure/payment/${item.price.cost}`} className="buy-now-btn">Buy Now</Link>
           </div>
         </div>
 

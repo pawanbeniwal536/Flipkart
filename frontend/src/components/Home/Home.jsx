@@ -9,6 +9,7 @@ import HomeDescription from '../HomeDescription/HomeDescription'
 import HomeFooter from '../Slider/HomeFooter'
 
 const Home = () => {
+
   return (
   <>
   <div className="home-container">

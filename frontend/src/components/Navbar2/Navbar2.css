@@ -4,7 +4,14 @@
 
 .nav2-super-container{
     position: sticky;
+    z-index: 999;
     top: 0;
+}
+
+.loading-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .nav2-input {

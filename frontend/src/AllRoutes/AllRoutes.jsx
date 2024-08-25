@@ -32,7 +32,7 @@ const AllRoutes = () => {
                 <Route path="/item/:id" element={<ItemDetails />} />
                 <Route path='/cart-items' element={<Cart />} />
                 <Route path='/product/flipkart/user/account/make-payment/paypal/secure/payment/:amount' element={<MakePayment/>} />
-                <Route path="/payment-success" element={<PaymentSuccess />} />
+                <Route path="/payment-success" element={<PaymentSuccess/>} />
                 <Route path="/payment-cancelled" element={<PaymentCancelled />} />
             </Routes>
         </>

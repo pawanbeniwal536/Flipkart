@@ -34,7 +34,6 @@ const getToken = async () => {
 const MakePayment = async( req,res ) => {
     try {
         let { amount } = req.body;
-        console.log('the amount of the user is the ',amount);
         const accessToken = await getToken()
         const response =await fetch("https://api-m.sandbox.paypal.com/v2/checkout/orders", {
             method: "POST",
@@ -64,8 +63,8 @@ const MakePayment = async( req,res ) => {
                             "shipping_preference": "GET_FROM_FILE",
                             "user_action": "PAY_NOW",
                             // if we do use webhooks than we will use return url and cancel url
-                        //    "return_url": "http://localhost:3000/payment-success",
-                        //    "cancel_url": "http://localhost:3000/payment-cancelled"
+                            //    "return_url": "http://localhost:3000/payment-success",
+                            //    "cancel_url": "http://localhost:3000/payment-cancelled"
                         }
                     }
                 }
@@ -73,8 +72,9 @@ const MakePayment = async( req,res ) => {
         })
     
         const data = await response.json();
+        console.log('the amount of the user is the ',data)
         res.status(200).json(data)
-    
+        
         }
         catch (error) {
             console.log("Server error is ",error)

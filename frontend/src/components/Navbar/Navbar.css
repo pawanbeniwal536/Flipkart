@@ -76,7 +76,7 @@
     
 }
 @media(max-width:900px){
-    .cart-cls {
+    .cart-nav-para {
         display: none;
     }
 }

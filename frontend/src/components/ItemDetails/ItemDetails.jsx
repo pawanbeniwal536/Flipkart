@@ -231,7 +231,7 @@ const ItemDetails = () => {
                     </button>
                   ) : (
                     <button className="check-pincode-btn" onClick={handleCheckPincode}>
-                      Check
+                      Check Pincode
                     </button>
                   )
                 }

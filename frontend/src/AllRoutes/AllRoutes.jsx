@@ -11,6 +11,17 @@ import MakePayment from '../Payment/MakePayment.jsx';
 import Cart from '../components/Cart/Cart.jsx';
 import PaymentSuccess from '../Payment/PaymentSuccess.jsx';
 import PaymentCancelled from '../Payment/PaymentCancelled.jsx';
+import Contact from '../components/Contact/Contact.jsx'
+import About from '../components/About/About.jsx'
+import Careers from '../components/Careers/Careers.jsx'
+import FlipkartStories from '../components/FlipkartStories/FlipkartStories.jsx';
+import Payment from '../components/Payment/Payment.jsx';
+import CancellationReturnPage from '../components/CancellationReturnPage/CancellationReturnPage.jsx'
+import Shipping from '../components/Shipping/Shipping.jsx';
+import TermsOfUsePage from '../components/TermsOfUsePage/TermsOfUsePage.jsx'
+import Privacy from '../components/Privacy/Privacy.jsx';
+import Security from '../components/Security/Security.jsx';
+
 
 const AllRoutes = () => {
     const [email, setEmail] = useState('Enter your Email')
@@ -34,6 +45,16 @@ const AllRoutes = () => {
                 <Route path='/product/flipkart/user/account/make-payment/paypal/secure/payment/:amount' element={<MakePayment/>} />
                 <Route path="/payment-success" element={<PaymentSuccess/>} />
                 <Route path="/payment-cancelled" element={<PaymentCancelled />} />
+                <Route path="/contact-us" element={<Contact/>} />
+                <Route path="/about-us" element={<About/>} />
+                <Route path="/careers" element={<Careers/>} />
+                <Route path="/flipkart-stories" element={<FlipkartStories/>} />
+                <Route path="/payments" element={<Payment/>} />
+                <Route path="/cancel-return-policy" element={<CancellationReturnPage/>} />
+                <Route path="/shipping" element={<Shipping/>} />
+                <Route path="/term-and-conditions" element={<TermsOfUsePage/>} />
+                <Route path="/privacy" element={<Privacy/>} />
+                <Route path="/security" element={<Security/>} />
             </Routes>
         </>
     )

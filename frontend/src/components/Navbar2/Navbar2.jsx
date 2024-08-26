@@ -74,7 +74,7 @@ const Navbar2 = () => {
                                 onClick={toggleMenu}
                             />
                             <div className={`nav2-login-hover absolute w-56 top-14 right-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
-                                <div className="triangle absolute left-24"></div>
+                                <div className="triangle absolute left-48"></div>
                                 <div className="hover-content text-blue-700">
                                     <div className="notification flex justify-around h-12 items-center border-b pl-1 hover:bg-slate-100">
                                         <FontAwesomeIcon icon={faBell} />
@@ -100,8 +100,10 @@ const Navbar2 = () => {
                             <span className="position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger mb-1 ml-2 font-extrabold">
                                 {cartQuantity > 0 ? cartQuantity : '0'}
                             </span>
-                            <FontAwesomeIcon className="text-white" icon={faCartShopping} />
-                            <Link to='/cart-items'className="text-gray-700 text-white font-semibold">Cart</Link>
+                            <Link to='/cart-items'className="text-gray-700 text-white font-semibold flex">
+                            <FontAwesomeIcon className="text-white pr-2 pt-1" icon={faCartShopping} />
+                            Cart
+                            </Link>
                         </div>
                     </div>
                 </div>

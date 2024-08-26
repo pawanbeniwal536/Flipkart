@@ -1,5 +1,7 @@
 import React from 'react'
 import './HomeFooter.css'
+import { Link } from 'react-router-dom'
+
 const HomeFooter = () => {
     return (
         <>
@@ -12,10 +14,12 @@ const HomeFooter = () => {
                             <div className="login-footer-about  text-gray-500 font-bold">
                                 ABOUT
                                 <div className="login-footer-child-items pt-2">
-                                    <p>Contact Us</p>
-                                    <p>About Us</p>
-                                    <p>Careers</p>
-                                    <p>Flipkart Stories</p>
+                                    <div className="link-calls-home-footer flex flex-column">
+                                    <Link to='/contact-us'className='mb-2'>Contact Us</Link>
+                                    <Link to='/about-us' className='mb-2'>About Us</Link>
+                                    <Link to='/careers' className='mb-2'>Careers</Link>
+                                    <Link to=''>Flipkart Stories</Link>
+                                    </div>
                                     <p>Press</p>
                                     <p>Corporate Information</p>
                                 </div>
@@ -34,9 +38,11 @@ const HomeFooter = () => {
                             <div className="login-footer-Help text-gray-500 font-bold">
                                 HELP
                                 <div className="login-footer-child-items pt-2">
-                                    <p>Payments</p>
-                                    <p>Shipping</p>
-                                    <p>Cancellation & Returns</p>
+                                    <div className="link-payment-cancel flex flex-column">
+                                    <Link to='/payments'className='mb-2'>Payments</Link>
+                                    <Link to='/cancel-return-policy'className='mb-2'>Cancellation & Returns</Link>
+                                    <Link to='/shipping'>Shipping</Link>
+                                    </div>
                                     <p>FAQ</p>
                                     <p>Report Infringement</p>
                                 </div>
@@ -46,10 +52,11 @@ const HomeFooter = () => {
                             <div className="login-footer-consumer text-gray-500 font-bold mt-28">
                                 CONSUMER POLICY
                                 <div className="login-footer-child-items pt-2">
-                                    <p>Cancellation & Returns </p>
-                                    <p>Terms of Use</p>
-                                    <p>Security</p>
-                                    <p>Privacy</p>
+                                    <div className="flex flex-column">
+                                    <Link to='/term-and-conditions'className='mb-2'>Terms of Use</Link>
+                                    <Link to='/security'className='mb-2'>Security</Link>
+                                    <Link to='/privacy'>Privacy</Link>
+                                    </div>
                                     <p>Sitemap</p>
                                     <p>Grievance Redressal</p>
                                     <p>EPR Compliance</p>

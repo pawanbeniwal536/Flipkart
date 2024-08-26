@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { useNavigate } from 'react-router-dom';
@@ -14,10 +14,9 @@ let initialOptions = {
 const MakePayment = () => {
 
   const { amount } = useParams()
-  console.log('the amount of the user is the ',amount);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  
+
   const createOrder = async () => {
     setLoading(true); // Start loading
     try {
@@ -25,7 +24,7 @@ const MakePayment = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          cart: [{ id: "product2", quantity: "2" }],
+          amount: amount
         }),
       });
 
@@ -40,7 +39,7 @@ const MakePayment = () => {
     } catch (error) {
       console.error('Error creating order:', error);
       throw error;
-    }finally{
+    } finally {
       setLoading(false)
     }
   };
@@ -48,18 +47,17 @@ const MakePayment = () => {
   const onApprove = async (data, actions) => {
     setLoading(true)
     try {
-      let details = await actions.order.capture().then((details)=>{
-      navigate(`/payment-success`, { state: { details } });
+      let details = await actions.order.capture().then((details) => {
+        navigate(`/payment-success`, { state: { details } });
       });
 
     } catch (error) {
-      console.error('error captureing order: ',error);
-    }finally
-    {
+      console.error('error captureing order: ', error);
+    } finally {
       setLoading(false)
     }
   };
-  
+
   const onError = (err) => {
     console.error('PayPal error:', err);
     navigate('/payment-cancelled')
@@ -67,8 +65,8 @@ const MakePayment = () => {
   }
   return (
     <>
-          <Navbar2 />
-      <div className='payment-page'>
+      <Navbar2 />
+      <div className='payment-page bg-gradient-to-r from-green-400 via-blue-500 to-purple-600'>
         {loading && (
           <div className="loading-overlay">
             <div className="loading-content">
@@ -77,7 +75,7 @@ const MakePayment = () => {
             </div>
           </div>
         )}
-        <div className="payment-container">
+        <div className="payment-container ">
           <h2 className="payment-title">Complete Your Payment</h2>
           <PayPalScriptProvider options={initialOptions}>
             <PayPalButtons

@@ -72,12 +72,13 @@ const Navbar = () => {
                 <span className="position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger mb-1 ml-2 font-extrabold">
                   {cartQuantity > 0 ? cartQuantity : '0'}
                 </span>
+
+                <Link to='/cart-items' className="text-gray-700 cart-cls flex">
                 <img
                   src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/header_cart-eed150.svg"
                   alt="cart-logo"
                 />
-                <Link to='/cart-items' className="text-gray-700 cart-cls">
-                  Cart
+                  <p className='cart-nav-para'>Cart</p>
                 </Link>
               </div>
 

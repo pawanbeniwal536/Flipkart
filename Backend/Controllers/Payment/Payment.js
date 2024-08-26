@@ -33,6 +33,8 @@ const getToken = async () => {
 
 const MakePayment = async( req,res ) => {
     try {
+        let { amount } = req.body;
+        console.log('the amount of the user is the ',amount);
         const accessToken = await getToken()
         const response =await fetch("https://api-m.sandbox.paypal.com/v2/checkout/orders", {
             method: "POST",
@@ -45,7 +47,7 @@ const MakePayment = async( req,res ) => {
                     {
                         "amount": {
                             "currency_code": "USD",
-                            "value": "100.00"
+                            "value": amount
                         },
                         "reference_id": "d9f80740-38f0-11e8-b467-0ed5f89f718b"
                     }

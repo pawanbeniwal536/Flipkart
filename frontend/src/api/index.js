@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'http://localhost:5000' });
+const api = axios.create({ baseURL: 'https://flipkart-server-qfd6.onrender.com' });
 
 export const signupOTP = (data) => api.post('user/signup', data);
 export const loginOTP = ( data ) => api.post('/user/login',data);

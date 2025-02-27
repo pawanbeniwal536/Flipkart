@@ -47,7 +47,7 @@ const Careers = () => {
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h4 className="text-lg font-medium text-gray-800">Marketing Specialist</h4>
               <p className="mt-2 text-gray-600">
-                Are you a marketing guru with a passion for digital campaigns? Join our team and help us spread the word about Flipkart Clone!
+                Are you a marketing guru with a pasion for digital campaigns? Join our team and help us spread the word about Flipkart Clone!
               </p>
               <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg shadow hover:bg-blue-700">Apply Now</button>
             </div>

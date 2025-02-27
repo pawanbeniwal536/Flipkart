@@ -101,7 +101,7 @@ const Careers = () => {
               <img src="https://via.placeholder.com/100" alt="Work-Life Balance" className="mx-auto mb-4"/>
               <h4 className="text-lg font-medium text-gray-800">Work-Life Balance</h4>
               <p className="mt-2 text-gray-600">
-                We believe in maintaining a healthy work-life balance to keep our employees happy and productive.
+                We believe in maintaining a healthy work-life balance to keep our employes happy and productive.
               </p>
             </div>
             <div className="text-center">
